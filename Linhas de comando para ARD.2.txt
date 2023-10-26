@@ -1,0 +1,95 @@
+Boa noite a todos!
+Como mencionado pelo Sr. Hamilton Filho, temos que efetuar movimentações no nosso repositório. Peço a colaboração de todos com essa etapa do projeto. Publiquem feedbacks, atualizações e dúvidas no GitHub.
+
+Segue em anexo um modelo de código pronto, a ideia é mais uma vez, trazer um modelo para que possamos nos familiarizar mais com a lógica de programação.
+
+// Code by Ramon M. Ferreira
+#include <SoftwareSerial.h>
+SoftwareSerial bluetooth(2, 3);
+
+int IN1 = 4;
+int IN2 = 5;
+int IN3 = 6;
+int IN4 = 7;
+char comando;
+
+void setup() {
+//Define os pinos como saida
+bluetooth.begin(9600);
+pinMode(IN1, OUTPUT);
+pinMode(IN2, OUTPUT);
+pinMode(IN3, OUTPUT);
+pinMode(IN4, OUTPUT);
+}
+
+void loop() {
+while (bluetooth.available()) {
+comando = bluetooth.read();
+if (comando == 'f') {
+frente();
+}
+else if (comando == 'b') {
+tras();
+}
+else if (comando == 'l') {
+esquerda();
+}
+else if (comando == 'r') {
+direita();
+}
+else if (comando == 'f') && (comando == 'l') {
+esquerda();
+}
+else if (comando == 'r') {
+direita();
+else {
+parado();
+}
+}
+}
+
+void frente() {
+//Gira o Motor A e B no sentido horario
+digitalWrite(IN1, HIGH);
+digitalWrite(IN2, LOW);
+digitalWrite(IN3, HIGH);
+digitalWrite(IN4, LOW);
+}
+
+void tras() {
+//Gira o Motor A e B no sentido anti-horario
+digitalWrite(IN1, LOW);
+digitalWrite(IN2, HIGH);
+digitalWrite(IN3, LOW);
+digitalWrite(IN4, HIGH);
+}
+
+void esquerda() {
+digitalWrite(IN1, LOW);
+digitalWrite(IN2, HIGH);
+digitalWrite(IN3, HIGH);
+digitalWrite(IN4, LOW);
+}
+
+void direita() {
+digitalWrite(IN1, HIGH);
+digitalWrite(IN2, LOW);
+digitalWrite(IN3, LOW);
+digitalWrite(IN4, HIGH);
+}
+
+void parado() {
+digitalWrite(IN1, HIGH);
+digitalWrite(IN2, HIGH);
+digitalWrite(IN3, HIGH);
+digitalWrite(IN4, HIGH);
+}
+
+void frenteeesquerda() {
+//Gira o Motor A e B no sentido horario
+digitalWrite(IN1, HIGH);
+digitalWrite(IN2, LOW);
+digitalWrite(IN3, HIGH);
+digitalWrite(IN4, LOW);
+}
+
