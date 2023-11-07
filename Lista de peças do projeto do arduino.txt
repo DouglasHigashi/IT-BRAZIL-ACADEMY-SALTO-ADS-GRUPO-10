@@ -1,0 +1,14 @@
+2 Motores DC 3-6 V para mover o nosso carrinho;
+Chassi e duas rodas;
+1 Roda Boba;
+Arduino Uno R3 Compatível;
+Uma Shield Ponte H L298 n;
+Módulo bluetooth Rs232 Hc05;
+Chave Liga-Desliga 10A;
+Suporte 4 Pilhas AA;
+Ferro de solda;
+Estanho;
+Jumpers;
+4 pilhas médias;
+1 Bateria 9v;
+Cabo de alimentação para o arduino;
